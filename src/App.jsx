@@ -1,35 +1,54 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState, useRef } from 'react'
 import './App.css'
+import { IoIosSearch } from "react-icons/io";
+import { BiSolidNavigation } from "react-icons/bi";
+import Clock from 'react-clock';
+
+function fToC(Temp) {
+  return (Temp - 273.15) * (9 / 5) + 32
+}
 
 function App() {
-  const [count, setCount] = useState(0)
+  
+  const inputRef = useRef()
+  const [temperatureF, setTemperatureF] = useState('--')
+  const [temperatureC, setTemperatureC] = useState('--')
+  const [city, setCity] = useState('')
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+  const search = async(location) => {
+
+    const key = import.meta.env.VITE_APP_API_KEY
+    console.log(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${key}`)
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${key}`);
+    const data = await response.json();
+
+    if (!response.ok){
+      alert("Enter Valid City")
+    }
+
+    setTemperatureF(Math.round(fToC(data.main.temp)))
+    setTemperatureC((data.main.temp - 273.15).toFixed(1))
+    setCity(location)
+  }
+
+    return (
+      <>
+      <form>
+        <input ref={inputRef} type="text" placeholder="Search..."></input>
+        <button type="button" onClick={() => search(inputRef.current.value)}>Enter</button>
+      </form>
+        <div id="card">
+          <p>
+            <strong>{city}</strong>
+          </p>
+          <p>
+            <strong>{temperatureF} °F</strong>
+          </p>
+        </div>
+      </>
+    ) 
 }
 
 export default App
+
+

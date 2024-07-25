@@ -2,15 +2,25 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  font-size: 1.5em;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: rgb(255, 255, 255);
+  background-color: #303030;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#card {
+  background-color: black;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 5%;
+  padding: 5%;
+  border-radius: 10px;
+  font-size: 3em;
 }
 
 a {
@@ -24,10 +34,11 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  justify-items: center;
+  padding: 2%;
 }
 
 h1 {
@@ -42,12 +53,13 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: rgb(92, 91, 91);
   cursor: pointer;
   transition: border-color 0.25s;
+  mix-blend-mode: overlay;
 }
 button:hover {
-  border-color: #646cff;
+  border-color:#ffffff;
 }
 button:focus,
 button:focus-visible {
@@ -66,3 +78,37 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+form{
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  justify-content: center;
+  flex-basis: 100%;
+}
+
+form input{
+  width: 40%;
+  background-color: rgb(43, 43, 43);
+  border-radius: 5px;
+  mix-blend-mode: overlay;
+  border: 1px solid rgb(114, 113, 113);
+  color: rgb(255, 255, 255);
+  padding: 0.6em 1.2em;
+  font-size: inherit;
+  height: auto;
+}
+
+form button{
+  color:white;
+  border-radius: 5px;
+  padding: 0.6em 1.2em;
+  font-size: inherit;
+  border: 1px solid rgb(114, 113, 113);
+}
+
+fieldset{
+  width: 100%;
+}
+
+input[type="text"] { box-sizing: border-box }
