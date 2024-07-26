@@ -23,13 +23,21 @@
   font-size: 3em;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+#card p {
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
-a:hover {
-  color: #535bf2;
+
+#switch {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 0.5em;
+}
+
+#side-note, footer{
+  font-size: 0.5rem;
+  color:#8f8e8e;
 }
 
 body {
@@ -39,6 +47,7 @@ body {
   min-height: 100vh;
   justify-items: center;
   padding: 2%;
+  position: relative;
 }
 
 h1 {
@@ -112,3 +121,10 @@ fieldset{
 }
 
 input[type="text"] { box-sizing: border-box }
+
+footer{
+  font-size: 0.5rem;
+  bottom: 0;
+  position: absolute;
+  display: flex;
+}
