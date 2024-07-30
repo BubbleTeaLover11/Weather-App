@@ -128,3 +128,16 @@ footer{
   position: absolute;
   display: flex;
 }
+
+#dropdown-row{
+  background-color: #5e5e5e;
+  color: rgb(255, 255, 255);
+  align-items: center;
+  margin-left: 15%;
+  margin-right: 15%;
+  cursor: default;
+}
+
+#dropdown-row:hover{
+  background-color: #232323;
+}
