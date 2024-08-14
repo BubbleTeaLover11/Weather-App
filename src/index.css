@@ -20,7 +20,7 @@
   margin-top: 5%;
   padding: 5%;
   border-radius: 10px;
-  font-size: 3em;
+  font-size: 2em;
 }
 
 #card p {
@@ -141,3 +141,36 @@ footer{
 #dropdown-row:hover{
   background-color: #232323;
 }
+
+table {
+  border-collapse: collapse;
+  border: 2px solid white;
+  width: 100%;
+  font-size: 0.5em;
+}
+caption {
+  caption-side: bottom;
+  padding: 10px;
+}
+tbody {
+  padding: 5%;
+}
+tfoot {}
+tr {}
+  tr:nth-child(even) {}
+td {
+  background-color: rgb(63, 63, 63);
+  text-align: center;
+  border: 2px solid white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-top: 1%;
+  padding-bottom: 1% ;
+}
+thead {
+  background-color: var(--lighterBrown);
+}
+th {
+  border: 2px solid white;
+}
+  td:nth-child(1) {}
